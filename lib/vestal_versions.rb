@@ -79,7 +79,7 @@ module LaserLemon
         end
 
         def create_version
-          versions.create(:changes => changes.slice(*versioned_columns), :number => (last_version + 1))
+          versions.create(:changes => changes.slice(*versioned_columns), :number => (last_version.to_i + 1))
           reset_version
         end
 
